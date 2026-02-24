@@ -1,0 +1,430 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Involved - Swap Shop Suffolk C.I.C.</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,800;0,900;1,800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #4c69a1;
+    --blue-dark: #3a5080;
+    --blue-deeper: #2d3f63;
+    --blue-light: #7a93c0;
+    --blue-pale: #dce6f5;
+    --black: #111111;
+    --white: #ffffff;
+    --off-white: #f8f8f8;
+    --grey: #e8e8e8;
+    --text-muted: #666;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 3rem;
+    background: var(--blue-deeper);
+    border-bottom: 3px solid var(--black);
+  }
+  .nav-logo {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: white; }
+  .nav-social { display: flex; gap: 0.6rem; align-items: center; }
+  .nav-social a {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-social a:hover { background: white; transform: scale(1.1); }
+  .nav-social svg { width: 15px; height: 15px; fill: white; transition: fill 0.2s; }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    min-height: 60vh;
+    padding-top: 72px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header-content {
+    padding: 5rem 5rem;
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+  }
+  .page-header .section-tag {
+    display: inline-block;
+    background: var(--blue-pale);
+    color: var(--blue-dark);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+    border-left: 3px solid var(--blue);
+  }
+  .page-header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: lowercase;
+  }
+  .page-header p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #444;
+    max-width: 70ch;
+  }
+
+  /* ── SECTION ── */
+  .section { padding: 6rem 5rem; }
+  .section-tag {
+    display: inline-block;
+    background: var(--blue-pale);
+    color: var(--blue-dark);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+    border-left: 3px solid var(--blue);
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: lowercase;
+  }
+
+  /* ── INVOLVED GRID ── */
+  .involved-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .involved-card {
+    padding: 2rem;
+    border: 2px solid var(--grey);
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  .involved-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 8px 24px rgba(76, 105, 161, 0.1);
+    transform: translateY(-4px);
+  }
+  .involved-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--blue-pale);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  .involved-icon svg { width: 32px; height: 32px; color: var(--blue); }
+  .involved-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 0.75rem;
+    text-transform: lowercase;
+    color: var(--black);
+  }
+  .involved-desc {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    background: var(--blue);
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+    border: 2px solid var(--blue);
+    display: inline-block;
+    margin-top: 1.5rem;
+  }
+  .btn-primary:hover { background: var(--blue-deeper); border-color: var(--blue-deeper); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(76,105,161,0.35); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    color: white;
+    padding: 3rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--blue-light); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: white; }
+  .footer-social { display: flex; gap: 1rem; }
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .footer-social a:hover { background: rgba(255,255,255,0.2); }
+  .footer-social svg { width: 18px; height: 18px; fill: white; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0.8rem 1.25rem; }
+    .nav-links { display: none; }
+    .nav-social { display: none; }
+    
+    .page-header-content { padding: 3rem 1.5rem 3.5rem; }
+    .page-header h1 { font-size: clamp(2rem, 7vw, 2.5rem); }
+    
+    .section { padding: 3.5rem 1.25rem; }
+    
+    .involved-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .involved-card { text-align: left; }
+    .involved-icon { margin: 0 0 1.5rem 0; }
+    
+    footer {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem 1.25rem;
+      gap: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- hidden SVG sprites -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ig" viewBox="0 0 24 24">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+  </symbol>
+  <symbol id="fb" viewBox="0 0 24 24">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+  </symbol>
+</svg>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo">Swap Shop Suffolk</a>
+  <ul class="nav-links">
+    <li><a href="index.html#mission">Mission</a></li>
+    <li><a href="what-we-do.html">What We Do</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="location.html">Location</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://www.instagram.com/swapshopsuffolk/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><use href="#ig"></use></svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61587531715508" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><use href="#fb"></use></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ── -->
+<section class="page-header">
+  <div class="page-header-content">
+    <div class="section-tag">Get Involved</div>
+    <h1>there's a place <span style="color: var(--blue); font-style: italic;">for everyone</span></h1>
+    <p>Whether you want to donate clothing, swap for new pieces, learn repair skills, or get involved in our mission, there are many ways to join the Swap Shop Suffolk movement and make a difference for the planet and your community.</p>
+  </div>
+</section>
+
+<!-- ── GET INVOLVED SECTION ── -->
+<section class="section">
+  <div style="margin-bottom: 3rem; padding: 1.5rem; background: var(--off-white); border-radius: 4px;">
+    <p style="font-size: 0.9rem; color: #666;">👈 <a href="what-we-do.html" style="color: var(--blue); font-weight: 600; text-decoration: none;">Learn about what we do first →</a></p>
+  </div>
+  
+  <div class="involved-grid">
+    <div class="involved-card">
+      <div class="involved-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3 5h3l-4 3 2 5-4-3-4 3 2-5-4-3h3l3-5z" fill="currentColor"/></svg></div>
+      <div class="involved-title">donate clothing</div>
+      <p class="involved-desc">Got garments you no longer wear? Bring them to our swap shop pop-up and give them a second life in the community. Every donation diverts textiles from landfill.</p>
+    </div>
+    <div class="involved-card">
+      <div class="involved-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z" fill="currentColor"/></svg></div>
+      <div class="involved-title">swap &amp; shop</div>
+      <p class="involved-desc">Trade garments for Swap Shop credits which you can use to swap for something you'll love — or pick up quality items at a discount. Circular fashion made accessible.</p>
+    </div>
+    <div class="involved-card">
+      <div class="involved-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/></svg></div>
+      <div class="involved-title">get a repair</div>
+      <p class="involved-desc">Bring in clothes for a repair or attend one of our workshops to learn how to mend and maintain your own wardrobe. Repair is a radical act.</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 4rem; padding: 3rem; background: var(--blue-pale); border-radius: 4px; border-left: 4px solid var(--blue);">
+    <h3 style="font-family: 'Fraunces', serif; font-size: 1.5rem; margin-bottom: 1rem; text-transform: lowercase;">Ready to get started?</h3>
+    <p style="font-size:0.98rem;font-weight:300;line-height:1.8;color:#333;margin-bottom:1.5rem;">Visit us on Wednesdays and Fridays at East Point Pavilion, Royal Plain, Lowestoft. No appointment needed — just drop by with your donations or to explore our collection.</p>
+    <p style="font-size:0.95rem;font-weight:500;color:var(--blue-dark);margin-bottom:1.5rem;"><svg style="width: 16px; height: 16px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 7 10 13 10 13s10-6 10-13c0-5.52-4.48-10-10-10zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg> East Point Pavilion, Royal Plain, Lowestoft NR33 0AP<br><svg style="width: 16px; height: 16px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M11 17h2v-5h-2v5zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H10.5v6h3V7z"/></svg> Wednesday & Friday: 10am – 3pm</p>
+    <a href="location.html" style="display: inline-block; color: var(--blue); font-weight: 600; text-decoration: none; font-size: 0.9rem;">View Full Location Details →</a>
+  </div>
+
+  <!-- ── UPCOMING EVENTS ── -->
+  <div style="margin-top: 4rem;">
+    <div class="section-tag">Stay Connected</div>
+    <h2 class="section-title">upcoming <span style="color: var(--blue); font-style: italic;">events</span></h2>
+    
+    <!-- Featured Event: International Women's Day -->
+    <div id="event-iwd-2026" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, var(--blue-pale) 0%, #f0e6ff 100%); border-radius: 4px; border: 2px solid var(--blue-light);">
+      <div>
+        <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem;">
+          <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" fill="#d946ef"><path d="M12 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm9 7h-6v13h-2v-6h-2v6h-2V9H3V7h18v2z"/></svg>
+          <div class="section-tag" style="margin: 0; background: rgba(255,255,255,0.8); border-left: 3px solid #d946ef;">Featured Event</div>
+        </div>
+        <h3 style="font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; margin-bottom: 1rem; text-transform: lowercase; color: var(--black);">International Women's Day Celebration</h3>
+        
+        <div style="margin-bottom: 1.5rem;">
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;"><strong>Join us in celebrating International Women's Day with a special free pop-up!</strong> We're collaborating with @thatcolourwoman to celebrate style, confidence, and sustainable fashion.</p>
+          
+          <div style="background: white; padding: 1.5rem; border-radius: 4px; margin-bottom: 1.5rem;">
+            <div style="margin-bottom: 1rem;">
+              <div style="display: flex; gap: 0.5rem; align-items: center; font-weight: 600; color: var(--blue-dark); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem;"><svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg> Date & Time</div>
+              <p style="font-size: 0.95rem; color: #333;">Friday 6 March<br><strong>10am – 3pm</strong></p>
+            </div>
+            <div style="margin-bottom: 1rem;">
+              <div style="display: flex; gap: 0.5rem; align-items: center; font-weight: 600; color: var(--blue-dark); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem;"><svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 7 10 13 10 13s10-6 10-13c0-5.52-4.48-10-10-10zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg> Location</div>
+              <p style="font-size: 0.95rem; color: #333;">East Point Pavilion<br>Royal Plain<br>Lowestoft, NR33 0AP</p>
+            </div>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.6); padding: 1.25rem; border-radius: 4px; border-left: 4px solid #d946ef;">
+            <div style="font-weight: 600; color: var(--black); margin-bottom: 0.75rem; font-size: 0.95rem;">What's included:</div>
+            <ul style="list-style: none; padding: 0;">
+              <li style="font-size: 0.9rem; color: #555; margin-bottom: 0.5rem; display: flex; gap: 0.75rem;"><svg style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24" fill="#fbbf24"><circle cx="8" cy="8" r="1.5"/><circle cx="16" cy="8" r="1.5"/><circle cx="12" cy="4" r="1.5"/><circle cx="12" cy="16" r="1.5"/></svg><span><strong>Mini consultations</strong> with local colour specialist Sarah Birch (FREE 15-min sessions)</span></li>
+              <li style="font-size: 0.9rem; color: #555; margin-bottom: 0.5rem; display: flex; gap: 0.75rem;"><svg style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24" fill="#4c69a1"><path d="M16 2H8c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h1v6h2v-6h2v6h2v-6h1c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 11h-6V4h6v9z"/></svg><span><strong>Browse & take home</strong> a free token for 1 item of clothing</span></li>
+              <li style="font-size: 0.9rem; color: #555; display: flex; gap: 0.75rem;"><svg style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24" fill="#4c69a1"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><span><strong>Celebrate together</strong> – no appointment needed, bring friends!</span></li>
+            </ul>
+          </div>
+
+          <p style="font-size: 0.85rem; color: #666; margin-top: 1rem; font-style: italic;">Funded by Lowestoft Town Council • Supporting women in our community</p>
+        </div>
+      </div>
+      
+      <div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+          <img src="https://scontent.fltn1-1.fna.fbcdn.net/v/t51.82787-15/641578558_17866871085574696_8735097851905443440_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=ddXDTj03dNoQ7kNvwEgvUUV&_nc_oc=Adk1FGX-Ejq5ue7GxeoKkgAGd0gc5kuMxya4Kx4lRG3n7WP8E7Gc0HoZ-T-rtF6q3Ds&_nc_zt=23&_nc_ht=scontent.fltn1-1.fna&_nc_gid=8DwQbanIWiHZcrho-3slyw&oh=00_AfuirJEVAB33GvIEHsPrK1a0hrthxMAApl5xVJe1ilDnnQ&oe=69A34E57" alt="International Women's Day event" style="width: 100%; border-radius: 4px; object-fit: cover;">
+          <img src="https://scontent.fltn1-2.fna.fbcdn.net/v/t51.82787-15/640766144_17866871097574696_130517329961090533_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_ohc=_ysb68qJWXcQ7kNvwGmaZ6f&_nc_oc=AdlcOo7nDaZy1JTLmMCkEtke5lZF10L-oixpyEk6EJCz0TP5LAkeSrR0MG-8yiVkmrY&_nc_zt=23&_nc_ht=scontent.fltn1-2.fna&_nc_gid=8DwQbanIWiHZcrho-3slyw&oh=00_Afs7UpiY6G49-YVVoIvbj3v__Q_AT4XOMyfst7Tzs2tfNg&oe=69A359DC" alt="Celebration with community" style="width: 100%; border-radius: 4px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem;">
+      <div style="padding: 2rem; border: 2px solid var(--grey); border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--blue)'; this.style.boxShadow='0 8px 24px rgba(76, 105, 161, 0.1)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--grey)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+        <div style="display: flex; gap: 0.75rem; align-items: center; font-size: 1.1rem; font-weight: 700; color: var(--blue); margin-bottom: 0.5rem;"><svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg> Weekly Pop-Up Swap Shop</div>
+        <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Donate, swap, and shop sustainable fashion every week</p>
+        <p style="font-size: 0.85rem; color: var(--blue-dark); font-weight: 500;"><svg style="width: 14px; height: 14px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg> Every Wednesday & Friday<br><svg style="width: 14px; height: 14px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M11 17h2v-5h-2v5zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H10.5v6h3V7z"/></svg> 10am – 3pm<br><svg style="width: 14px; height: 14px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 7 10 13 10 13s10-6 10-13c0-5.52-4.48-10-10-10zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg> East Point Pavilion, Royal Plain</p>
+      </div>
+      
+      <div style="padding: 2rem; border: 2px dashed var(--blue-light); border-radius: 4px; background: var(--off-white); text-align: center;">
+        <p style="font-size: 0.95rem; color: var(--blue-dark); font-weight: 500;"><svg style="width: 16px; height: 16px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg> More events coming soon!</p>
+        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Follow us on Instagram @swapshopsuffolk for announcements about workshops, talks, and special events.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="index.html#contact" class="btn-primary">Get in Touch →</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span><strong>Swap Shop Suffolk C.I.C.</strong> &nbsp;·&nbsp; Lowestoft, Suffolk &nbsp;·&nbsp; Community Interest Company &nbsp;·&nbsp; Est. 2026</span>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/swapshopsuffolk/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><use href="#ig"></use></svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61587531715508" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><use href="#fb"></use></svg>
+    </a>
+  </div>
+</footer>
+<script>
+  // Auto-expire events after the event date
+  function checkEventExpiry() {
+    const eventIWD = document.getElementById('event-iwd-2026');
+    if (eventIWD) {
+      // Event date: March 6, 2026 at 3pm (end of event)
+      const eventEndDate = new Date(2026, 2, 6, 15, 0, 0); // Month is 0-indexed, so 2 = March
+      const currentDate = new Date();
+      
+      if (currentDate > eventEndDate) {
+        eventIWD.style.display = 'none';
+      }
+    }
+  }
+  
+  // Check on page load
+  document.addEventListener('DOMContentLoaded', checkEventExpiry);
+</script>
+</body>
+</html>

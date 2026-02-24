@@ -1,0 +1,416 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Location & Hours - Swap Shop Suffolk C.I.C.</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,800;0,900;1,800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #4c69a1;
+    --blue-dark: #3a5080;
+    --blue-deeper: #2d3f63;
+    --blue-light: #7a93c0;
+    --blue-pale: #dce6f5;
+    --black: #111111;
+    --white: #ffffff;
+    --off-white: #f8f8f8;
+    --grey: #e8e8e8;
+    --text-muted: #666;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 3rem;
+    background: var(--blue-deeper);
+    border-bottom: 3px solid var(--black);
+  }
+  .nav-logo {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: white; }
+  .nav-social { display: flex; gap: 0.6rem; align-items: center; }
+  .nav-social a {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-social a:hover { background: white; transform: scale(1.1); }
+  .nav-social svg { width: 15px; height: 15px; fill: white; transition: fill 0.2s; }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    min-height: 60vh;
+    padding-top: 72px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header-content {
+    padding: 5rem 5rem;
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+  }
+  .page-header .section-tag {
+    display: inline-block;
+    background: var(--blue-pale);
+    color: var(--blue-dark);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+    border-left: 3px solid var(--blue);
+  }
+  .page-header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: lowercase;
+  }
+  .page-header p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #444;
+    max-width: 70ch;
+  }
+
+  /* ── SECTION ── */
+  .section { padding: 6rem 5rem; }
+  .section-tag {
+    display: inline-block;
+    background: var(--blue-pale);
+    color: var(--blue-dark);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+    border-left: 3px solid var(--blue);
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: lowercase;
+  }
+
+  /* ── LOCATION CARD ── */
+  .location-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 2.5rem;
+    border: 2px solid var(--grey);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+  }
+  .location-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .info-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .info-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--blue-dark);
+    min-width: 120px;
+  }
+  .label-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--blue);
+    flex-shrink: 0;
+  }
+  .info-value {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: #555;
+  }
+  .hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .hours-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+  .hours-item .day {
+    font-weight: 600;
+    color: var(--black);
+  }
+  .hours-item .time {
+    text-align: right;
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .location-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .location-cta p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    background: var(--blue);
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+    border: 2px solid var(--blue);
+    display: inline-block;
+    text-align: center;
+  }
+  .btn-primary:hover { background: var(--blue-deeper); border-color: var(--blue-deeper); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(76,105,161,0.35); }
+
+  /* ── MAP PLACEHOLDER ── */
+  .map-placeholder {
+    width: 100%;
+    height: 400px;
+    background: var(--blue-pale);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--blue-light);
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .map-placeholder:hover {
+    background: var(--blue-light);
+  }
+  .map-placeholder p {
+    text-align: center;
+    color: var(--blue-dark);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    color: white;
+    padding: 3rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--blue-light); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: white; }
+  .footer-social { display: flex; gap: 1rem; }
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .footer-social a:hover { background: rgba(255,255,255,0.2); }
+  .footer-social svg { width: 18px; height: 18px; fill: white; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0.8rem 1.25rem; }
+    .nav-links { display: none; }
+    .nav-social { display: none; }
+    
+    .page-header-content { padding: 3rem 1.5rem 3.5rem; }
+    .page-header h1 { font-size: clamp(2rem, 7vw, 2.5rem); }
+    
+    .section { padding: 3.5rem 1.25rem; }
+    
+    .location-card {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 1.5rem;
+    }
+    .hours-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      text-align: left;
+    }
+    .hours-item .time {
+      text-align: left;
+    }
+    .map-placeholder {
+      height: 300px;
+    }
+    
+    footer {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem 1.25rem;
+      gap: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- hidden SVG sprites -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ig" viewBox="0 0 24 24">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+  </symbol>
+  <symbol id="fb" viewBox="0 0 24 24">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+  </symbol>
+</svg>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo">Swap Shop Suffolk</a>
+  <ul class="nav-links">
+    <li><a href="index.html#mission">Mission</a></li>
+    <li><a href="what-we-do.html">What We Do</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="location.html">Location</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://www.instagram.com/swapshopsuffolk/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><use href="#ig"></use></svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61587531715508" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><use href="#fb"></use></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ── -->
+<section class="page-header">
+  <div class="page-header-content">
+    <div class="section-tag">Visit Us</div>
+    <h1>find us in <span style="color: var(--blue); font-style: italic;">lowestoft</span></h1>
+    <p>We're based at East Point Pavilion on Royal Plain in the heart of Lowestoft. Visit us on Wednesdays and Fridays to donate, swap, or simply explore our collection of sustainable clothing. No appointment needed.</p>
+  </div>
+</section>
+
+<!-- ── LOCATION SECTION ── -->
+<section class="section">
+  <div class="location-card">
+    <div class="location-info">
+      <div class="info-item">
+        <div class="info-label"><svg class="label-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12c0 7 10 13 10 13s10-6 10-13c0-5.52-4.48-10-10-10zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" fill="currentColor"/></svg> Address</div>
+        <div class="info-value">East Point Pavilion<br>Royal Plain<br>Lowestoft, Suffolk<br>NR33 0AP<br><br><strong style="color: var(--blue); text-decoration: none; display: flex; gap: 0.5rem; align-items: center;"><svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 7 10 13 10 13s10-6 10-13c0-5.52-4.48-10-10-10zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg> <a href="https://www.google.com/maps/search/East+Point+Pavilion,+Royal+Plain,+Lowestoft" target="_blank" style="color: var(--blue);">View on Google Maps →</a></strong></div>
+      </div>
+      <div class="info-item">
+        <div class="info-label"><svg class="label-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm-7 0c0 .83-.67 1.5-1.5 1.5S5 11.83 5 11s.67-1.5 1.5-1.5 1.5.67 1.5 1.5zM12 6c.83 0 1.5.67 1.5 1.5V11h3V7.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V13h-3v1.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5V13h-3v-3.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V11h3V7.5c0-.83-.67-1.5-1.5-1.5z" fill="currentColor"/></svg> Opening Hours</div>
+        <div class="hours-list">
+          <div class="hours-item">
+            <span class="day">Wednesday</span>
+            <span class="time">10am – 3pm</span>
+          </div>
+          <div class="hours-item">
+            <span class="day">Friday</span>
+            <span class="time">10am – 3pm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="location-cta">
+      <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.2rem;"><strong>What to bring:</strong><br>✓ Clean, quality clothing to donate<br>✓ Items to swap or sell<br>✓ Pieces needing repair<br><br>No appointments needed.</p>
+      <a href="https://www.google.com/maps/search/East+Point+Pavilion,+Royal+Plain,+Lowestoft" target="_blank" class="btn-primary">Get Directions →</a>
+    </div>
+  </div>
+
+  <div class="map-placeholder">
+    <p>🗺️ Add your map here (Google Maps embed or similar)</p>
+  </div>
+
+  <div style="margin-top: 3rem; padding: 2rem; background: var(--off-white); border-radius: 4px; border-left: 4px solid var(--blue);">
+    <h3 style="font-family: 'Fraunces', serif; font-size: 1.3rem; margin-bottom: 1rem; text-transform: lowercase;">Can't make it on Wednesdays or Fridays?</h3>
+    <p style="font-size:0.95rem;font-weight:300;line-height:1.8;color:#555;margin-bottom:1rem;">Get in touch via email or Instagram DM to arrange a time that works for you. We also do private appointments for bulk donations.</p>
+    <a href="index.html#contact" style="color: var(--blue); font-weight: 600; text-decoration: none;">Contact us →</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span><strong>Swap Shop Suffolk C.I.C.</strong> &nbsp;·&nbsp; Lowestoft, Suffolk &nbsp;·&nbsp; Community Interest Company &nbsp;·&nbsp; Est. 2026</span>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/swapshopsuffolk/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><use href="#ig"></use></svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61587531715508" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><use href="#fb"></use></svg>
+    </a>
+  </div>
+</footer>
+</body>
+</html>
