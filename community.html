@@ -160,6 +160,50 @@
     transform: translateY(-2px);
   }
 
+  .involved-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .involved-card {
+    padding: 2rem;
+    border: 2px solid var(--grey);
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  .involved-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 8px 24px rgba(76, 105, 161, 0.1);
+    transform: translateY(-4px);
+  }
+  .involved-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--blue-pale);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  .involved-icon svg { width: 32px; height: 32px; color: var(--blue); }
+  .involved-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 0.75rem;
+    text-transform: lowercase;
+    color: var(--black);
+  }
+  .involved-desc {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #555;
+  }
+
   /* ── IMAGE GRID ── */
   .community-images {
     display: grid;
@@ -247,6 +291,11 @@
     }
     
     .who-grid { gap: 0.5rem; }
+    .involved-grid {
+      grid-template-columns: 1fr;
+    }
+    .involved-card { text-align: left; }
+    .involved-icon { margin: 0 0 1.5rem 0; }
     
     footer {
       flex-direction: column;
@@ -277,7 +326,7 @@
   <ul class="nav-links">
     <li><a href="about-us.html">About Us</a></li>
     <li><a href="community.html">Community</a></li>
-    <li><a href="get-involved.html">Get Involved</a></li>
+    <li><a href="get-involved.html">What's On</a></li>
     <li><a href="index.html#blog">Blog</a></li>
     <li><a href="index.html#donate">Donate</a></li>
     <li><a href="index.html#contact">Contact</a></li>
@@ -317,20 +366,22 @@
     <div class="who-chip">Anyone with clothes to share</div>
   </div>
 
-  <h2 class="section-title" style="margin-top: 3rem;">Community in Action</h2>
-  <p style="font-size:0.98rem;font-weight:300;line-height:1.8;color:#555;max-width:70ch;">Join our community members who are swapping, learning, and connecting at our weekly pop-ups:</p>
-  
-  <div class="community-images">
-    <div class="community-image-card">
-      <img src="https://scontent.fltn1-1.fna.fbcdn.net/v/t39.30808-6/658990478_122111400489251057_4001399462793186855_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=2a1932&_nc_ohc=91CvVj8ZB1kQ7kNvwF84aHl&_nc_oc=Adq-j0UZl5VjbC8s2h3ma9MNHIiFfZFjjZB78ne0zDsoc0kZKffSv0xlSkdpAq0YOzA&_nc_zt=23&_nc_ht=scontent.fltn1-1.fna&_nc_gid=ET5VuqB-qJTz7L_Vbae3Pg&_nc_ss=7a3a8&oh=00_Af3kH2e21T5_CBDphdCYqaBLW2jnSaJ14Ze2h55oqpVABg&oe=69EBFF3A" alt="Swap Shop Storefront">
+  <div class="involved-grid">
+    <div class="involved-card">
+      <div class="involved-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3 5h3l-4 3 2 5-4-3-4 3 2-5-4-3h3l3-5z" fill="currentColor"/></svg></div>
+      <div class="involved-title">donate clothing</div>
+      <p class="involved-desc">Got garments you no longer wear? Bring them to our swap shop pop-up and give them a second life in the community. Every donation diverts textiles from landfill.</p>
     </div>
-    <div class="community-image-card">
-      <img src="https://scontent.fltn1-1.fna.fbcdn.net/v/t51.82787-15/654203429_17870774664574696_7602166793653777958_n.jpg?stp=dst-jpegr_tt6&_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=uDiiflqD6eAQ7kNvwFEAeAC&_nc_oc=AdrDxmwsVHU-sEXB-M1XiR3zvU8U4WH-zGe8Ki-HGxgPF0WlfNt1UgGmJuhBhsKnzkU&_nc_zt=23&se=-1&_nc_ht=scontent.fltn1-1.fna&_nc_gid=jIXxIQckB_sSrbQ_hpe6rA&_nc_ss=7a3a8&oh=00_Af1wvnllcQxBqXI9ZApR6W6G9ZZY_Y9xP2Sv3EgXBVsTOA&oe=69EC1342" alt="Community Styling Event">
+    <div class="involved-card">
+      <div class="involved-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z" fill="currentColor"/></svg></div>
+      <div class="involved-title">swap &amp; shop</div>
+      <p class="involved-desc">Trade garments for Swap Shop credits which you can use to swap for something you'll love — or pick up quality items at a discount. Circular fashion made accessible.</p>
     </div>
-  </div>
-
-  <div style="margin-top: 3rem; padding: 2rem; background: var(--blue-pale); border-radius: 4px; border-left: 4px solid var(--blue);">
-    <p style="font-size:0.95rem;font-weight:300;line-height:1.8;color:#333;">Every swap, repair, and donation strengthens our community and moves us closer to a more sustainable, equitable fashion future. Whether you're joining us for the first time or you're a regular at our pop-ups, you're part of the solution.</p>
+     <div class="involved-card">
+      <div class="involved-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/></svg></div>
+      <div class="involved-title">volunteer</div>
+      <p class="involved-desc">Join our welcoming and friendly team to help sort donations, run workshops and support our community.</p>
+    </div>
   </div>
 
   <div style="text-align: center; margin-top: 3rem;">
