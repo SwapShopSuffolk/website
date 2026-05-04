@@ -82,6 +82,12 @@
     position: relative;
     z-index: 2;
   }
+  .page-header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) 420px;
+    gap: 2rem;
+    align-items: center;
+  }
   .page-header .section-tag {
     display: inline-block;
     background: var(--blue-pale);
@@ -244,6 +250,10 @@
     
     .section { padding: 3.5rem 1.25rem; }
     
+    .page-header-inner {
+      grid-template-columns: 1fr;
+    }
+    
     .involved-grid {
       grid-template-columns: 1fr;
       gap: 1.5rem;
@@ -306,10 +316,22 @@
 
 <!-- ── PAGE HEADER ── -->
 <section class="page-header">
-  <div class="page-header-content">
-    <div class="section-tag">What's On</div>
-    <h1>what's on at <span style="color: var(--blue); font-style: italic;">Swap Shop Suffolk</span></h1>
-    <p>Find our weekly Swap Shop opening hours, discover how our swap experience works, and book a place at upcoming events, workshops and community sessions.</p>
+  <div class="page-header-inner">
+    <div class="page-header-content">
+      <div class="section-tag">What's On</div>
+      <h1>what's on at <span style="color: var(--blue); font-style: italic;">Swap Shop Suffolk</span></h1>
+      <p>Find our weekly Swap Shop opening hours, discover how our swap experience works, and book a place at upcoming events, workshops and community sessions.</p>
+    </div>
+    <div class="involved-card" style="padding: 2rem;">
+      <div class="involved-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 3.75 2.4 6.88 5.7 7.79L11 22h2l.3-5.21C16.6 15.88 19 12.75 19 9c0-3.87-3.13-7-7-7zm0 4c1.66 0 3 1.34 3 3 0 .6-.19 1.16-.51 1.62l-2.49 2.98-.86-1.04c-.4-.48-.64-1.09-.64-1.76 0-1.66 1.34-3 3-3z" fill="currentColor"/></svg></div>
+      <div class="involved-title">Swap Shop Pop-Up</div>
+      <p class="involved-desc">Visit our weekly Swap Shop to donate, swap, and shop preloved clothing. Bring items you'd like to trade, or browse from our community rails.</p>
+      <p class="involved-desc" style="margin-top:1rem;font-weight:600;color:#333;">Wednesdays & Fridays · 10am – 3pm<br>East Point Pavilion, Royal Plain, Lowestoft NR33 0AP</p>
+      <div style="display:flex; flex-wrap: wrap; gap:0.75rem; margin-top:1.25rem;">
+        <a href="what-we-do.html" class="btn-primary">How it works</a>
+        <a href="what-we-do.html" class="btn-primary" style="background: var(--white); color: var(--blue); border-color: var(--blue);">What we trade</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -319,18 +341,6 @@
     <p style="font-size: 0.9rem; color: #666;">👈 <a href="what-we-do.html" style="color: var(--blue); font-weight: 600; text-decoration: none;">See how our Swap Shop works and what we trade →</a></p>
   </div>
   
-  <div class="involved-grid">
-    <div class="involved-card">
-      <div class="involved-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 3.75 2.4 6.88 5.7 7.79L11 22h2l.3-5.21C16.6 15.88 19 12.75 19 9c0-3.87-3.13-7-7-7zm0 4c1.66 0 3 1.34 3 3 0 .6-.19 1.16-.51 1.62l-2.49 2.98-.86-1.04c-.4-.48-.64-1.09-.64-1.76 0-1.66 1.34-3 3-3z" fill="currentColor"/></svg></div>
-      <div class="involved-title">Swap Shop Pop-Up</div>
-      <p class="involved-desc">Visit our weekly Swap Shop to donate, swap, and shop preloved clothing. Bring items you'd like to trade, or browse from our community rails.</p>
-      <p class="involved-desc" style="margin-top:1rem;font-weight:600;color:#333;">Wednesdays & Fridays · 10am – 3pm<br>East Point Pavilion, Royal Plain, Lowestoft NR33 0AP</p>
-      <a href="what-we-do.html" class="btn-primary" style="margin-top:1.25rem;">How it works</a>
-      <a href="what-we-do.html" class="btn-primary" style="margin-top:0.75rem; display:inline-block; background: var(--white); color: var(--blue); border-color: var(--blue);">What we trade</a>
-    </div>
- 
-  </div>
-
   <div style="margin-top: 4rem;">
     <div class="section-tag">What's On</div>
     <h2 class="section-title">upcoming <span style="color: var(--blue); font-style: italic;">events</span></h2>
