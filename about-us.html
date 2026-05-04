@@ -271,11 +271,97 @@
   .footer-social a:hover { border-color: var(--blue); background: var(--blue); }
   .footer-social svg { width: 13px; height: 13px; fill: white; }
 
+  /* ── MOBILE NAV ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--blue-deeper);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 1.5rem;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+    text-transform: lowercase;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: color 0.2s;
+  }
+  .mobile-menu a:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
+  .mobile-menu a:hover { color: var(--blue-light); }
+  .mobile-menu-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .mobile-menu-social a {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255,255,255,0.3) !important;
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 !important;
+    font-size: 0 !important;
+  }
+  .mobile-menu-social svg { width: 18px; height: 18px; fill: white; }
+  .mobile-menu-close {
+    position: absolute;
+    top: 1.25rem; right: 1.25rem;
+    background: rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    color: white;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .mobile-menu-close:hover { background: rgba(255,255,255,0.25); }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 0.8rem 1.25rem; }
     .nav-links { display: none; }
     .nav-social { display: none; }
+    .nav-hamburger { display: flex; }
     
     .page-header-content { padding: 3rem 1.5rem 3.5rem; }
     .page-header h1 { font-size: clamp(2rem, 7vw, 2.5rem); }
@@ -336,7 +422,29 @@
       <svg viewBox="0 0 24 24"><use href="#fb"></use></svg>
     </a>
   </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- ── MOBILE MENU ── -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
+  <a href="about-us.html" class="mobile-nav-link">About Us</a>
+  <a href="community.html" class="mobile-nav-link">Community</a>
+  <a href="whats-on.html" class="mobile-nav-link">What's On</a>
+  <a href="index.html#blog" class="mobile-nav-link">Blog</a>
+  <a href="index.html#donate" class="mobile-nav-link">Donate</a>
+  <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+  <div class="mobile-menu-social">
+    <a href="https://www.instagram.com/swapshopsuffolk/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><use href="#ig"></use></svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61587531715508" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><use href="#fb"></use></svg>
+    </a>
+  </div>
+</div>
 
 <!-- ── PAGE HEADER ── -->
 <section class="page-header">
@@ -438,6 +546,32 @@
       link.style.fontWeight = '700';
     }
   });
+
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    const closeBtn = document.getElementById('mobileMenuClose');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    }
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
 </script>
 </body>
 </html>
