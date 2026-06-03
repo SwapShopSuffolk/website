@@ -219,7 +219,7 @@
   }
 
   .workshop-feature {
-    margin: 0 auto;
+    margin: 1.5rem auto 2rem;
     max-width: 1100px;
     padding: 2rem 3rem;
     background: linear-gradient(135deg, rgba(76,105,161,0.05), rgba(255,255,255,0.95));
@@ -230,7 +230,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    margin-top: -3rem;
     position: relative;
     z-index: 5;
   }
@@ -277,11 +276,36 @@
     color: var(--blue-dark);
     font-size: 0.95rem;
     line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
   }
   .workshop-feature .feature-meta strong {
     display: block;
     font-weight: 700;
     color: var(--black);
+  }
+  .workshop-feature .feature-meta a {
+    display: block;
+    width: min(320px, 100%);
+    text-decoration: none;
+  }
+  .workshop-feature .feature-meta img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(76,105,161,0.2);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.09);
+    display: block;
+  }
+  .workshop-feature .thumb-caption {
+    margin-top: 0.9rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: 0.01em;
+    text-transform: none;
   }
 
   /* ── TICKER ── */
@@ -926,12 +950,13 @@
     }
     .activity-card { padding: 1.75rem 1.5rem; }
     .activity-num { font-size: 3rem; }
-    .workshop-feature { flex-direction: column; text-align: left; }
+    .workshop-feature { flex-direction: column; text-align: left; align-items: center; }
     .workshop-feature .feature-copy,
     .workshop-feature .feature-meta {
       width: 100%;
     }
-    .workshop-feature .feature-meta { text-align: left; }
+    .workshop-feature .feature-copy { text-align: left; }
+    .workshop-feature .feature-meta { text-align: center; align-items: center; }
 
     .community-section { padding: 3.5rem 1.25rem; }
     .community-section::before { font-size: 5rem; bottom: -1rem; }
@@ -1154,18 +1179,15 @@
 
 <section class="workshop-feature" id="workshop-feature">
   <div class="feature-copy">
-    <div class="feature-pill">Upcoming Workshop</div>
-    <h2 class="feature-title">Bag Charm Upcycling Workshop</h2>
-    <p>Learn how to make your own bag charm from recycled materials in a friendly, hands-on session. Spaces are limited, so book early to join us at East Point Pavilion.</p>
-    <div class="feature-actions">
-      <a href="https://www.zeffy.com/en-GB/ticketing/upcycling-workshop-bag-charms" class="btn-primary" target="_blank">Book now</a>
-      <a href="whats-on.html" class="btn-outline">See What's On</a>
-    </div>
+    <div class="section-tag">Upcoming Events</div>
+    <h2 class="feature-title">Upcycling Workshop</h2>
   </div>
   <div class="feature-meta">
-    <strong>When:</strong> Wednesday 10 June 2026, 10:30am – 12:30pm<br>
-    <strong>Where:</strong> East Point Pavilion, Lowestoft<br>
-    <strong>Why:</strong> Upcycle textiles, learn a new craft, and support sustainable fashion.</div>
+    <a href="images/bag-charm-workshop-poster.png" target="_blank" rel="noopener" class="poster-link">
+      <img src="images/bag-charm-workshop-poster.png" alt="Upcycling Workshop poster">
+    </a>
+    <a href="whats-on.html" class="btn-outline">find out more</a>
+  </div>
 </section>
 
 <!-- ── TICKER ── -->
@@ -1189,6 +1211,8 @@
     <span class="ticker-item">Zero Waste Fashion</span><span class="ticker-dot">·</span>
   </div>
 </div>
+
+
 
 <!-- ── MISSION ── -->
 <section class="section" id="mission">
