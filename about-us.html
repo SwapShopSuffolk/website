@@ -377,7 +377,15 @@
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
-    .activity-card { padding: 1.75rem 1.5rem; }
+    .activity-card {
+      padding: 1.75rem 1.5rem;
+      min-width: 0;
+    }
+    .activity-title,
+    .activity-desc {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
     .activity-num { font-size: 3rem; }
     
     footer {
@@ -386,6 +394,16 @@
       padding: 1.5rem 1.25rem;
       gap: 1rem;
     }
+  }
+
+  @media (max-width: 480px) {
+    .page-header-content { padding: 2.5rem 1rem 3rem; }
+    .section { padding: 3rem 1rem; }
+    .section-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+    .activity-card { padding: 1.25rem 1rem; }
+    .activity-title { font-size: 1.1rem; }
+    .activity-desc { font-size: 0.88rem; line-height: 1.7; }
+    .btn-primary { width: 100%; text-align: center; }
   }
 </style>
 </head>
@@ -502,13 +520,13 @@
       <div class="activity-num">01</div>
       <div class="activity-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" fill="currentColor"/></svg></div>
       <div class="activity-title">Weekly Swap Shop</div>
-      <p class="activity-desc">A weekly pop-up in Lowestoft where the community can donate, exchange, or purchase quality clothing, shoes and accessories at little to no cost — fostering community involvement and a circular economy. Drop by on Wednesdays or Fridays to find your next favourite piece.</p>
+      <p class="activity-desc">A weekly pop-up in Lowestoft where the community can donate, exchange, or purchase quality clothing, shoes and accessories at little to no cost — fostering community involvement and a circular economy. Drop by on Wednesdays, Thursdays or Fridays to find your next favourite piece.</p>
     </div>
     <div class="activity-card">
       <div class="activity-num">02</div>
       <div class="activity-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/></svg></div>
-      <div class="activity-title">Repairs & Collaborations</div>
-      <p class="activity-desc">In-house repairs for damaged donations plus a repair service for the public. Items beyond repair are passed to local artists, charities and small businesses for creative repurposing — nothing goes to waste.</p>
+      <div class="activity-title">Repair Skills & Collaborations</div>
+      <p class="activity-desc">We share practical repair skills through workshops and community sessions so people can mend garments at home. Items beyond repair are passed to local artists, charities and small businesses for creative repurposing — nothing goes to waste.</p>
     </div>
     <div class="activity-card">
       <div class="activity-num">03</div>
@@ -520,7 +538,7 @@
       <div class="activity-num">04</div>
       <div class="activity-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 12H8v2h2v-2zm0-6H8v2h2V6zm0 12H8v2h2v-2zm6-8h-2v2h2v-2zm0-6h-2v2h2V4zm0 12h-2v2h2v-2zm6-8h-2v2h2v-2zm0-6h-2v2h2V4zm0 12h-2v2h2v-2z" fill="currentColor"/></svg></div>
       <div class="activity-title">Local Partnerships</div>
-      <p class="activity-desc">We collaborate with local businesses and organisations to provide free clothing, repairs and garment care advice to people who are homeless, returning to work, or on low incomes. Supporting our most vulnerable community members is at the heart of everything we do.</p>
+      <p class="activity-desc">We collaborate with local businesses and organisations to provide free clothing, repair skills and garment care advice to people who are homeless, returning to work, or on low incomes. Supporting our most vulnerable community members is at the heart of everything we do.</p>
     </div>
   </div>
 </section>

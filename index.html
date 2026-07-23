@@ -948,12 +948,21 @@
       grid-template-columns: 1fr;
       gap: 1rem;
     }
-    .activity-card { padding: 1.75rem 1.5rem; }
+    .activity-card {
+      padding: 1.75rem 1.5rem;
+      min-width: 0;
+    }
+    .activity-title,
+    .activity-desc {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
     .activity-num { font-size: 3rem; }
     .workshop-feature { flex-direction: column; text-align: left; align-items: center; }
     .workshop-feature .feature-copy,
     .workshop-feature .feature-meta {
       width: 100%;
+      min-width: 0;
     }
     .workshop-feature .feature-copy { text-align: left; }
     .workshop-feature .feature-meta { text-align: center; align-items: center; }
@@ -990,6 +999,14 @@
       gap: 2rem;
       padding: 2rem 1.5rem;
     }
+    .info-item {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .info-label {
+      min-width: 0;
+      width: 100%;
+    }
     .hours-item {
       grid-template-columns: 1fr;
       gap: 0.5rem;
@@ -997,6 +1014,9 @@
     }
     .hours-item .time {
       text-align: left;
+    }
+    .location-cta {
+      width: 100%;
     }
 
     .contact-section {
@@ -1025,7 +1045,13 @@
     .contact-form input, .contact-form textarea { font-size: 1rem; }
     .social-section h2 { font-size: 1.75rem; }
     .community-section::before { display: none; }
-    .activity-card { padding: 1.5rem 1.25rem; }
+    .activity-card {
+      padding: 1.5rem 1.25rem;
+      min-width: 0;
+    }
+    .activity-title { font-size: 1.05rem; }
+    .activity-desc { font-size: 0.86rem; line-height: 1.7; }
+    .location-card { padding: 1.25rem 1rem; }
     nav { padding: 0.75rem 1rem; }
   }
 
@@ -1337,7 +1363,7 @@
     <div class="location-content fade-up visible">
       <div class="section-tag">visit us</div>
       <h2 class="section-title">find us in <span class="blue">lowestoft</span></h2>
-      <p style="font-size:0.98rem;font-weight:300;line-height:1.8;color:#555;margin-top:1.25rem;max-width:60ch;">We're based at East Point Pavilion on Royal Plain in the heart of Lowestoft. Visit us on Wednesdays and Fridays to donate, swap, or simply explore our collection of sustainable clothing.</p>
+      <p style="font-size:0.98rem;font-weight:300;line-height:1.8;color:#555;margin-top:1.25rem;max-width:60ch;">We're based at East Point Pavilion on Royal Plain in the heart of Lowestoft. Visit us on Wednesdays, Thursdays and Fridays to donate, swap, or simply explore our collection of sustainable clothing.</p>
       <div style="margin-top: 2.5rem;">
         <a href="location.html" class="btn-primary">View Full Details & Directions →</a>
       </div>

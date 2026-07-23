@@ -381,6 +381,14 @@
       gap: 2rem;
       padding: 1.5rem;
     }
+    .info-item {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .info-label {
+      min-width: 0;
+      width: 100%;
+    }
     .hours-item {
       grid-template-columns: 1fr;
       gap: 0.5rem;
@@ -389,10 +397,22 @@
     .hours-item .time {
       text-align: left;
     }
+    .location-cta {
+      width: 100%;
+    }
     .map-placeholder {
       height: 300px;
     }
-    
+  }
+
+  @media (max-width: 480px) {
+    .page-header-content { padding: 2.5rem 1rem 3rem; }
+    .section { padding: 3rem 1rem; }
+    .section-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+    .location-card { padding: 1.25rem 1rem; }
+    .info-value { font-size: 0.92rem; }
+    .btn-primary { width: 100%; text-align: center; }
+  }    
     footer {
       flex-direction: column;
       text-align: center;
@@ -464,7 +484,7 @@
   <div class="page-header-content">
     <div class="section-tag">Visit Us</div>
     <h1>find us in <span style="color: var(--blue); font-style: italic;">lowestoft</span></h1>
-    <p>We're based at East Point Pavilion on Royal Plain in the heart of Lowestoft. Visit us on Wednesdays and Fridays to donate, swap, or simply explore our collection of sustainable clothing. No appointment needed.</p>
+    <p>We're based at East Point Pavilion on Royal Plain in the heart of Lowestoft. Visit us on Wednesdays, Thursdays and Fridays to donate, swap, or simply explore our collection of sustainable clothing. No appointment needed.</p>
   </div>
 </section>
 
@@ -484,6 +504,10 @@
             <span class="time">10am – 3pm</span>
           </div>
           <div class="hours-item">
+            <span class="day">Thursday</span>
+            <span class="time">10am – 3pm</span>
+          </div>
+          <div class="hours-item">
             <span class="day">Friday</span>
             <span class="time">10am – 3pm</span>
           </div>
@@ -491,7 +515,7 @@
       </div>
     </div>
     <div class="location-cta">
-      <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.2rem;"><strong>What to bring:</strong><br>✓ Clean, quality clothing to donate<br>✓ Items to swap or sell<br>✓ Pieces needing repair<br><br>No appointments needed.</p>
+      <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.2rem; line-height: 1.8;">Looking for more advice on what we can accept? Visit our <a href="what-we-do.html" style="color: var(--blue); font-weight: 600;">What We Do</a> page for guidance on donations and accepted items.</p>
       <a href="https://www.google.com/maps/search/East+Point+Pavilion,+Royal+Plain,+Lowestoft" target="_blank" class="btn-primary">Get Directions →</a>
     </div>
   </div>
