@@ -1193,15 +1193,15 @@
       <a href="whats-on.html" class="btn-outline">What's On</a>
     </div>
     <div id="hero-workshop-promo" style="margin-top:1.25rem; max-width:760px; background: linear-gradient(135deg, rgba(76,105,161,0.05), rgba(255,255,255,0.95)); border: 2px solid var(--blue); border-radius: 8px; padding: 0.9rem 1rem; display:flex; align-items:center; gap:1rem;">
-      <a href="https://www.zeffy.com/en-GB/ticketing/upcycling-workshop-t-shirt-yarn" target="_blank" rel="noopener" style="display:block; width:140px; flex-shrink:0;">
-        <img src="images/tshirt-yarn-workshop.png" alt="T-Shirt Yarn workshop poster" style="width:140px; height:auto; border-radius:6px; box-shadow:0 6px 18px rgba(0,0,0,0.12); display:block;">
-        <div style="font-size:0.85rem; font-weight:700; color:var(--black); margin-top:0.5rem; text-align:center;">Upcycling Workshop</div>
+      <a href="https://www.zeffy.com/en-GB/ticketing/upcycling-workshop-folk-birds" target="_blank" rel="noopener" style="display:block; width:140px; flex-shrink:0;">
+        <img src="images/folk-birds-workshop.png" alt="Folk Birds workshop poster" style="width:140px; height:auto; border-radius:6px; box-shadow:0 6px 18px rgba(0,0,0,0.12); display:block;">
+        <div style="font-size:0.85rem; font-weight:700; color:var(--black); margin-top:0.5rem; text-align:center;">Folk Birds Workshop</div>
       </a>
       <div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:0.35rem;">
-        <div style="font-weight:800; color:var(--blue); font-size:1rem;">T-Shirt Yarn</div>
-        <div style="font-size:0.95rem; color:#333;">Wed 26 Aug · 10:30 – 12:30 · East Point Pavilion</div>
+        <div style="font-weight:800; color:var(--blue); font-size:1rem;">Friday 9 October</div>
+        <div style="font-size:0.95rem; color:#333;">10:30 – 12:30 · East Point Pavilion</div>
         <div style="margin-top:0.6rem;">
-          <a href="https://www.zeffy.com/en-GB/ticketing/upcycling-workshop-t-shirt-yarn" class="btn-primary" target="_blank" rel="noopener">Book now</a>
+          <a href="https://www.zeffy.com/en-GB/ticketing/upcycling-workshop-folk-birds" class="btn-primary" target="_blank" rel="noopener">Book now</a>
         </div>
       </div>
     </div>
@@ -1219,16 +1219,16 @@
 <section class="workshop-feature" id="workshop-feature">
   <div class="feature-copy">
     <div class="section-tag">Upcoming Events</div>
-    <h2 class="feature-title">Upcycling Workshop — T-Shirt Yarn</h2>
-    <p>Turn old T-shirts into reusable yarn and discover a simple, creative way to give textiles a second life. Materials and guidance are provided.</p>
-    <div style="margin-top:0.6rem;"><span class="feature-pill">Wed 26 Aug · 10:30 – 12:30</span></div>
+    <h2 class="feature-title">Folk Birds Workshop</h2>
+    <p>Join us for a creative folk birds session at East Point Pavilion and make something special using upcycled materials.</p>
+    <div style="margin-top:0.6rem;"><span class="feature-pill">Fri 9 Oct · 10:30 – 12:30</span></div>
   </div>
   <div class="feature-meta">
-    <a href="images/tshirt-yarn-workshop.png" target="_blank" rel="noopener" class="poster-link">
-      <img src="images/tshirt-yarn-workshop.png" alt="T-Shirt Yarn workshop poster">
+    <a href="images/folk-birds-workshop.png" target="_blank" rel="noopener" class="poster-link">
+      <img src="images/folk-birds-workshop.png" alt="Folk Birds workshop poster">
     </a>
     <div class="feature-actions">
-      <a href="https://www.zeffy.com/en-GB/ticketing/upcycling-workshop-t-shirt-yarn" class="btn-outline" target="_blank" rel="noopener">Book now</a>
+      <a href="https://www.zeffy.com/en-GB/ticketing/upcycling-workshop-folk-birds" class="btn-outline" target="_blank" rel="noopener">Book now</a>
       <a href="whats-on.html" class="btn-primary">More events</a>
     </div>
   </div>
@@ -1536,7 +1536,7 @@
   function updateWorkshopFeatureVisibility() {
     const feature = document.getElementById('workshop-feature');
     if (!feature) return;
-    const expiryDate = new Date(2026, 7, 27, 23, 59, 59);
+    const expiryDate = new Date(2026, 9, 12, 23, 59, 59);
     if (new Date() > expiryDate) {
       feature.style.display = 'none';
     }
