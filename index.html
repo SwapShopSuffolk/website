@@ -380,6 +380,7 @@
 
   /* ── SECTIONS ── */
   .section { padding: 6rem 5rem; }
+  #donate { border-top: 2px solid var(--black); }
   .section-tag {
     display: inline-block;
     background: var(--blue-pale);
@@ -995,14 +996,34 @@
       word-break: break-word;
     }
     .activity-num { font-size: 3rem; }
-    .workshop-feature { flex-direction: column; text-align: left; align-items: center; }
+    .workshop-feature {
+      flex-direction: column;
+      text-align: left;
+      align-items: center;
+      margin: 1rem auto 1.5rem;
+      padding: 1.25rem 1rem;
+    }
     .workshop-feature .feature-copy,
     .workshop-feature .feature-meta {
       width: 100%;
       min-width: 0;
+      max-width: 100%;
     }
-    .workshop-feature .feature-copy { text-align: left; }
-    .workshop-feature .feature-meta { text-align: center; align-items: center; }
+    .workshop-feature .feature-copy {
+      text-align: left;
+      max-width: 100%;
+    }
+    .workshop-feature .feature-meta {
+      text-align: center;
+      align-items: center;
+    }
+    .workshop-feature .feature-actions {
+      width: 100%;
+    }
+    .workshop-feature .feature-actions a {
+      width: 100%;
+      min-width: 0;
+    }
 
     .community-section { padding: 3.5rem 1.25rem; }
     .community-section::before { font-size: 5rem; bottom: -1rem; }
@@ -1289,15 +1310,15 @@
     <div class="mission-text fade-up visible">
       <div class="section-tag">Our Mission</div>
       <h2 class="section-title">fast fashion<br><span class="blue">costs the earth.</span></h2>
-      <p>The fashion industry is one of the world's biggest polluters — responsible for 10% of annual global carbon emissions and vast quantities of water waste, microplastic pollution, and landfill. Most of it comes from clothes worn only a handful of times.</p>
+      <p>The fashion industry is one of the world's biggest polluters - responsible for 10% of annual global carbon emissions and vast quantities of water waste, microplastic pollution, and landfill. Most of it comes from clothes worn only a handful of times.</p>
       <p>Swap Shop Suffolk C.I.C. exists to disrupt that cycle in Lowestoft. By keeping quality garments in rotation, we directly reduce demand for new production, extend the life of what already exists, and build a local circular economy that benefits people and planet.</p>
-      <p>As a Community Interest Company, every penny of surplus goes back into the community — supporting low-income households, funding repair workshops, and growing the movement.</p>
+      <p>As a Community Interest Company, every penny of surplus goes back into the community - supporting low-income households, funding repair workshops, and growing the movement.</p>
     </div>
     <div class="fade-up visible">
       <div class="pillar"><div class="pillar-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="currentColor"/></svg></div><div><div class="pillar-title">Sustainability First</div><p class="pillar-desc">The UK sends 350,000 tonnes of clothing to landfill every year. Every swap, repair, and donation directly reduces that number.</p></div></div>
       <div class="pillar"><div class="pillar-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 11c1.66 0 2.99-1.34 2.99-3S10.16 5 8.5 5C6.84 5 5.5 6.34 5.5 8s1.34 3 3 3zm0-5c.83 0 1.5.67 1.5 1.5S9.33 9 8.5 9 7 8.33 7 7.5 7.67 6 8.5 6zm6 10c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm0-5c.83 0 1.5.67 1.5 1.5S15.33 14 14.5 14 13 13.33 13 12.5 13.67 11 14.5 11zm-6.5 5c-1.66 0-5 .83-5 2.5v3h12v-3c0-1.67-3.34-2.5-5-2.5zm6.5-3c-.67 0-2-.33-2.5-1 .83-1 2.5-2.08 2.5-3.5 0-1.1-.9-2-2-2s-2 .9-2 2c0 1.42 1.67 2.5 2.5 3.5.5.67 1.83 1 2.5 1z" fill="currentColor"/></svg></div><div><div class="pillar-title">Community Centred</div><p class="pillar-desc">Affordable, sustainable clothing shouldn't be a luxury. We bring it to the doorstep of Lowestoft's working class households.</p></div></div>
       <div class="pillar"><div class="pillar-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z" fill="currentColor"/></svg></div><div><div class="pillar-title">Circular Economy</div><p class="pillar-desc">When clothes stay in circulation longer, fewer new garments are made. Every item in rotation is one less item produced.</p></div></div>
-      <div class="pillar"><div class="pillar-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" fill="currentColor"/></svg></div><div><div class="pillar-title">Education &amp; Awareness</div><p class="pillar-desc">We run workshops, share resources, and help people understand the true cost of fast fashion — and how to opt out of it.</p></div></div>
+      <div class="pillar"><div class="pillar-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" fill="currentColor"/></svg></div><div><div class="pillar-title">Education &amp; Awareness</div><p class="pillar-desc">We run workshops, share resources, and help people understand the true cost of fast fashion - and how to opt out of it.</p></div></div>
     </div>
   </div>
 </section>
@@ -1310,16 +1331,16 @@
     <h2 class="section-title">create clothing security <span class="blue">in your community</span></h2>
     <p style="font-size:0.98rem;font-weight:300;line-height:1.8;color:#555;margin-top:1.25rem;">At Swap Shop Suffolk C.I.C., we know that change starts with people like you. Every act of kindness, every donation, and every moment of your time brings us closer to achieving our mission. Together, we can create a brighter, more sustainable world for all.</p>
   </div>
-  <div>
-  <div data-zeffy-embed data-form-url="/embed/donation-form/donate-to-swap-shop-suffolk"></div>
-  <div data-zeffy-embed-fallback style="display:none;">
-    <div style="position:relative;overflow:hidden;height:450px;width:100%;"><iframe title='Donation form powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' src='https://www.zeffy.com/embed/donation-form/donate-to-swap-shop-suffolk' allowpaymentrequest allowTransparency="true"></iframe></div>
+  <div style="margin-top: 2rem;">
+    <div data-zeffy-embed data-form-url="/embed/donation-form/donate-to-swap-shop-suffolk"></div>
+    <div data-zeffy-embed-fallback style="display:none;">
+      <div style="position:relative;overflow:hidden;height:450px;width:100%;"><iframe title='Donation form powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' src='https://www.zeffy.com/embed/donation-form/donate-to-swap-shop-suffolk' allowpaymentrequest allowTransparency="true"></iframe></div>
+    </div>
+    <script
+      src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
+      onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';});">
+    </script>
   </div>
-  <script
-    src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
-    onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';});">
-  </script>
-</div>
 </section>
 
 <!-- ── BLOG ── -->
