@@ -25,6 +25,43 @@
     color: var(--black);
     overflow-x: hidden;
   }
+  img, svg, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  a, button, input, textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (max-width: 900px) {
+    .section,
+    .community-section,
+    .location-section,
+    .social-section,
+    .contact-section,
+    .page-header-content,
+    .hero-text {
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+    }
+    .hero-sub,
+    .section p,
+    .page-header-content p,
+    .location-content p,
+    .contact-copy p,
+    .community-inner p {
+      max-width: 100% !important;
+    }
+    .btn-primary,
+    .btn-outline,
+    .location-cta,
+    .btn-submit {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+  }
 
   /* ── NAV ── */
   nav {
@@ -187,6 +224,27 @@
     color: #555;
   }
 
+  .info-panels {
+    padding: 2rem 5rem 4rem;
+    background: var(--off-white);
+    border-radius: 0 0 8px 8px;
+    margin-top: -2rem;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 1;
+  }
+  .info-panel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  .info-panel {
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid var(--grey);
+    border-radius: 8px;
+  }
+
   /* ── BUTTONS ── */
   .btn-primary {
     background: var(--blue);
@@ -327,6 +385,16 @@
     .page-header h1 { font-size: clamp(2rem, 7vw, 2.5rem); }
     
     .section { padding: 3.5rem 1.25rem; }
+    .info-panels {
+      padding: 1.5rem 1rem 2.5rem;
+    }
+    .info-panel-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .info-panel {
+      padding: 1.25rem 1rem;
+    }
     
     .activities-grid {
       grid-template-columns: 1fr;
@@ -348,12 +416,6 @@
       text-align: center;
       padding: 1.5rem 1.25rem;
       gap: 1rem;
-    }
-
-    /* Opening hours grid responsive */
-    div[style*="grid-template-columns: repeat(2, minmax(0, 1fr))"] {
-      grid-template-columns: 1fr !important;
-      gap: 1.5rem !important;
     }
   }
 
@@ -434,15 +496,15 @@
   </div>
 </section>
 
-<div style="padding: 2rem 5rem 4rem; background: var(--off-white); border-radius: 0 0 8px 8px; margin-top: -2rem; box-shadow: 0 16px 40px rgba(0,0,0,0.05); position: relative; z-index: 1;">
-  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem;">
-    <div style="padding: 1.5rem; background: white; border: 1px solid var(--grey); border-radius: 8px;">
+<div class="info-panels">
+  <div class="info-panel-grid">
+    <div class="info-panel">
       <div class="section-tag">Opening Hours</div>
       <h2 class="section-title" style="margin-top: 1rem;">Trading days</h2>
       <p style="font-size: 1rem; line-height: 1.8; color: #444; margin-top: 1rem;">We are open for trading on <strong>Wednesday</strong>, <strong>Thursday</strong> and <strong>Friday</strong> from <strong>10am to 3pm</strong>, and we also host pop-ups on <strong>Saturday</strong>. To see our upcoming events, visit our <a href="whats-on.html" style="color: var(--blue); font-weight: 600;">What's On</a> page.</p>
       <p style="font-size: 0.95rem; color: #555; margin-top: 1.25rem;">Customers may bring up to <strong>10 items per day</strong> for trade. Please ensure everything is in good, clean condition.</p>
     </div>
-    <div style="padding: 1.5rem; background: white; border: 1px solid var(--grey); border-radius: 8px;">
+    <div class="info-panel">
       <div class="section-tag">What We Trade</div>
       <h2 class="section-title" style="margin-top: 1rem;">Accepted items</h2>
       <ul style="margin-top: 1rem; color: #444; line-height: 1.8; list-style: disc inside; font-size: 0.95rem;">

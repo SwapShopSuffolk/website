@@ -25,6 +25,43 @@
     color: var(--black);
     overflow-x: hidden;
   }
+  img, svg, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  a, button, input, textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (max-width: 900px) {
+    .section,
+    .community-section,
+    .location-section,
+    .social-section,
+    .contact-section,
+    .page-header-content,
+    .hero-text {
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+    }
+    .hero-sub,
+    .section p,
+    .page-header-content p,
+    .location-content p,
+    .contact-copy p,
+    .community-inner p {
+      max-width: 100% !important;
+    }
+    .btn-primary,
+    .btn-outline,
+    .location-cta,
+    .btn-submit {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+  }
 
   /* ── NAV ── */
   nav {
