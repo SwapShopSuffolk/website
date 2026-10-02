@@ -40,7 +40,6 @@
     .location-section,
     .social-section,
     .contact-section,
-    .page-header-content,
     .hero-text {
       padding-left: 1.25rem !important;
       padding-right: 1.25rem !important;
@@ -114,16 +113,25 @@
     overflow: hidden;
   }
   .page-header-content {
-    padding: 4rem 5rem 2rem;
-    max-width: 900px;
+    min-width: 0;
     position: relative;
     z-index: 2;
   }
   .page-header-inner {
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) 420px;
-    gap: 2rem;
+    grid-template-columns: minmax(0, 1.2fr) minmax(24rem, 0.9fr);
+    gap: clamp(2rem, 5vw, 5rem);
     align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 3rem 5rem 2rem;
+  }
+  .page-header-gallery {
+    width: 100%;
+    min-width: 0;
+    max-width: 38rem;
+    justify-self: center;
   }
   .page-header + .section {
     padding-top: 1.5rem;
@@ -159,11 +167,10 @@
   .page-header p strong { font-weight: 700; }
   .photo-gallery-shell {
     display: grid;
-    grid-template-columns: 2.75rem minmax(0, 1fr) 2.75rem;
+    grid-template-columns: 2.25rem minmax(0, 1fr) 2.25rem;
     align-items: center;
-    gap: 0.75rem;
-    width: min(100%, 38rem);
-    margin: 1.5rem auto;
+    gap: 0.5rem;
+    width: 100%;
   }
   .photo-gallery {
     display: flex;
@@ -178,19 +185,22 @@
   .photo-gallery::-webkit-scrollbar { display: none; }
   .photo-gallery:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
   .photo-gallery-arrow {
-    width: 2.75rem;
+    width: 2.25rem;
     height: 2.75rem;
-    border: 1.5px solid var(--blue-light);
-    border-radius: 50%;
-    background: var(--blue-pale);
-    color: var(--blue-deeper);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--blue-dark);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 300;
     line-height: 1;
     cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
   }
+  .photo-gallery-arrow:hover:not(:disabled) { color: var(--blue); transform: scale(1.12); }
   .photo-gallery-arrow:disabled { opacity: 0.4; cursor: default; }
   .photo-gallery-arrow:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
   .photo-gallery-item {
@@ -420,13 +430,15 @@
     .nav-social { display: none; }
     .nav-hamburger { display: flex; }
     
-    .page-header-content { padding: 3rem 1.5rem 3.5rem; }
+    .page-header-content { padding: 0; }
     .page-header h1 { font-size: clamp(2rem, 7vw, 2.5rem); }
     
     .section { padding: 3.5rem 1.25rem; }
     
     .page-header-inner {
       grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 3rem 1.25rem;
     }
     
     .involved-grid {
@@ -519,6 +531,8 @@
       <h1>what's on at <span style="color: var(--blue); font-style: italic;">Swap Shop Suffolk</span></h1>
       <p>Along with our weekly Swap Shop, we offer free and low-cost workshops funded by donations. Our regular workshops aim to share sewing and repair skills with our community to extend the life of your wardrobe and reuse textiles in creative ways that minimise our waste.
         <br><br>Plus you'll get to meet local people who share your values, and enjoy beautiful views over the North sea!</p>
+    </div>
+    <div class="page-header-gallery">
       <div class="photo-gallery-shell">
         <button class="photo-gallery-arrow" type="button" aria-label="Previous photo" aria-controls="photoGallery" data-gallery-step="-1" title="Previous photo" disabled>&larr;</button>
         <div class="photo-gallery" id="photoGallery" role="region" aria-label="Swap Shop and workshop photo gallery" tabindex="0">
@@ -550,7 +564,7 @@
       <div class="page-header-cta">
         <a href="https://www.zeffy.com/en-GB/organizations/swap-shop-suffolk-cic" class="btn-primary">Upcoming Events</a>
       </div>
-          </div>
+    </div>
   </div>
 </section>
 
