@@ -156,6 +156,55 @@
     color: #444;
     max-width: 70ch;
   }
+  .page-header p strong { font-weight: 700; }
+  .photo-gallery-shell {
+    display: grid;
+    grid-template-columns: 2.75rem minmax(0, 1fr) 2.75rem;
+    align-items: center;
+    gap: 0.75rem;
+    width: min(100%, 38rem);
+    margin: 1.5rem auto;
+  }
+  .photo-gallery {
+    display: flex;
+    gap: 1rem;
+    min-width: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding: 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .photo-gallery::-webkit-scrollbar { display: none; }
+  .photo-gallery:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+  .photo-gallery-arrow {
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1.5px solid var(--blue-light);
+    border-radius: 50%;
+    background: var(--blue-pale);
+    color: var(--blue-deeper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .photo-gallery-arrow:disabled { opacity: 0.4; cursor: default; }
+  .photo-gallery-arrow:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+  .photo-gallery-item {
+    flex: 0 0 100%;
+    min-width: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 4px;
+    scroll-snap-align: start;
+  }
+  .photo-gallery-item img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .page-header-booking { max-width: 50ch; margin: 1rem auto 0; text-align: center; }
+  .page-header-cta { display: flex; justify-content: center; margin-top: 1rem; }
+  .page-header-cta .btn-primary { margin-top: 0; }
 
   /* ── SECTION ── */
   .section { padding: 6rem 5rem; }
@@ -468,67 +517,46 @@
     <div class="page-header-content">
       <div class="section-tag">What's On</div>
       <h1>what's on at <span style="color: var(--blue); font-style: italic;">Swap Shop Suffolk</span></h1>
-      <p>Find our weekly Swap Shop opening hours, discover how our swap experience works, and book a place at upcoming events, workshops and community sessions.</p>
-      <div style="margin-top:1rem;">
-        <a href="what-we-do.html" class="btn-primary">Weekly Swap Shop</a>
+      <p>Along with our weekly Swap Shop, we offer free and low-cost workshops funded by donations. Our regular workshops aim to share sewing and repair skills with our community to extend the life of your wardrobe and reuse textiles in creative ways that minimise our waste.
+        <br><br>Plus you'll get to meet local people who share your values, and enjoy beautiful views over the North sea!</p>
+      <div class="photo-gallery-shell">
+        <button class="photo-gallery-arrow" type="button" aria-label="Previous photo" aria-controls="photoGallery" data-gallery-step="-1" title="Previous photo" disabled>&larr;</button>
+        <div class="photo-gallery" id="photoGallery" role="region" aria-label="Swap Shop and workshop photo gallery" tabindex="0">
+        <figure class="photo-gallery-item">
+          <img src="images/workshop-photos/2d62d064-7e32-47df-96f5-70551e89ccfd.jpg" alt="Workshop participants working with fabric and sewing equipment" loading="lazy">
+        </figure>
+        <figure class="photo-gallery-item">
+          <img src="images/workshop-photos/bbf4a21a-8c86-4e66-9281-d0d01a2adc5d.jpg" alt="Participants sharing a sewing activity around a worktable" loading="lazy">
+        </figure>
+        <figure class="photo-gallery-item">
+          <img src="images/workshop-photos/e41aa6b2-321f-411b-bc67-2f0a5d2b3eb5.jpg" alt="Community members taking part in a Swap Shop textile workshop" loading="lazy">
+        </figure>
+        <figure class="photo-gallery-item">
+          <img src="images/workshop-photos/IMG_5506.jpg" alt="Hands sewing fabric during a workshop" loading="lazy">
+        </figure>
+        <figure class="photo-gallery-item">
+          <img src="images/workshop-photos/IMG_5507.jpg" alt="A fabric upcycling project in progress on a workshop table" loading="lazy">
+        </figure>
+        <figure class="photo-gallery-item">
+          <img src="images/workshop-photos/IMG_6912.jpg" alt="A participant working on a textile project at the workshop" loading="lazy">
+        </figure>
+        <figure class="photo-gallery-item">
+          <img src="images/workshop-photos/IMG_6917.jpg" alt="Community members gathered for a textile workshop" loading="lazy">
+        </figure>
+        </div>
+        <button class="photo-gallery-arrow" type="button" aria-label="Next photo" aria-controls="photoGallery" data-gallery-step="1" title="Next photo">&rarr;</button>
       </div>
-      <p style="margin-top:0.85rem; font-size:0.9rem; color:#666; display:flex; align-items:center; gap:0.5rem; max-width: 48rem;">
-        <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px; height:16px; flex-shrink:0;"><path d="M14 7l-5 5 5 5V7z"/></svg>
-        <a href="what-we-do.html" style="color: var(--blue); font-weight: 600; text-decoration: none;">See how our Swap Shop works & what items we trade</a>
-      </p>
-    </div>
+      <p class="page-header-booking"><strong>Click the link below to see our upcoming sessions and book your place.</strong></p>
+      <div class="page-header-cta">
+        <a href="https://www.zeffy.com/en-GB/organizations/swap-shop-suffolk-cic" class="btn-primary">Upcoming Events</a>
+      </div>
+          </div>
   </div>
 </section>
 
-<!-- ── WHAT'S ON SECTION ── -->
 <section class="section">
-  <div style="margin-top: 4rem;">
-    <div class="section-tag">What's On</div>
-    <h2 class="section-title">upcoming <span style="color: var(--blue); font-style: italic;">events</span></h2>
-    
-    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem;">
-      <div id="event-folk-birds-2026" class="event-card" style="padding: 2rem; border: 2px solid var(--grey); border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--blue)'; this.style.boxShadow='0 8px 24px rgba(76, 105, 161, 0.1)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--grey)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-        <div class="event-card-content" style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: start;">
-          <div>
-            <div style="display: flex; gap: 0.75rem; align-items: center; font-size: 1.1rem; font-weight: 700; color: var(--blue); margin-bottom: 0.5rem;"><svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 7 7 13 7 13s7-6 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg> Folk Birds Workshop</div>
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Join us for a creative folk birds workshop and make something special in a friendly, hands-on session.</p>
-            <p style="font-size: 0.85rem; color: var(--blue-dark); font-weight: 500; margin-bottom: 1rem;"><svg style="width: 14px; height: 14px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg> Friday 9 October · 10:30am – 12:30pm<br><svg style="width: 14px; height: 14px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M11 17h2v-5h-2v5zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg> East Point Pavilion</p>
-            <a href="https://www.zeffy.com/en-GB/ticketing/upcycling-workshop-folk-birds" class="btn-primary" target="_blank">Book now</a>
-          </div>
-          <div style="text-align: center;">
-            <img src="images/folk-birds-workshop.png" alt="Folk Birds workshop poster" style="max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-          </div>
-        </div>
-      </div>
-
-      <div id="event-fabric-pumpkin-2026" class="event-card" style="order: 3; padding: 2rem; border: 2px solid var(--grey); border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--blue)'; this.style.boxShadow='0 8px 24px rgba(76, 105, 161, 0.1)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--grey)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-        <div class="event-card-content" style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: start;">
-          <div>
-            <div style="display: flex; gap: 0.75rem; align-items: center; font-size: 1.1rem; font-weight: 700; color: var(--blue); margin-bottom: 0.5rem;"><svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 7 7 13 7 13s7-6 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg> Fabric Pumpkin Workshop</div>
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Create a colourful fabric pumpkin using upcycled textiles and simple sewing techniques in a relaxed, creative session.</p>
-            <p style="font-size: 0.85rem; color: var(--blue-dark); font-weight: 500; margin-bottom: 1rem;"><svg style="width: 14px; height: 14px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg> Wednesday 28 October · 10:30am – 12:30pm<br><svg style="width: 14px; height: 14px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M11 17h2v-5h-2v5zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg> East Point Pavilion</p>
-            <a href="https://www.zeffy.com/en-GB/ticketing/upcycling-workshop-fabric-pumpkins" class="btn-primary" target="_blank">Book now</a>
-          </div>
-          <div style="text-align: center;">
-            <img src="images/pumpkin-workshop-header.png" alt="Fabric Pumpkin Workshop poster" style="max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-          </div>
-        </div>
-      </div>
-
-      <div id="event-shirt-upcycling-2026" class="event-card" style="order: 2; padding: 2rem; border: 2px solid var(--grey); border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--blue)'; this.style.boxShadow='0 8px 24px rgba(76, 105, 161, 0.1)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--grey)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-        <div class="event-card-content" style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: start;">
-          <div>
-            <div style="display: flex; gap: 0.75rem; align-items: center; font-size: 1.1rem; font-weight: 700; color: var(--blue); margin-bottom: 0.5rem;"><svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 7 7 13 7 13s7-6 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg> Shirt Upcycling Workshop</div>
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Create your own custom top from pre-loved materials in a two-hour machine sewing workshop from SEEN Studios.</p>
-            <p style="font-size: 0.85rem; color: var(--blue-dark); font-weight: 500; margin-bottom: 1rem;"><svg style="width: 14px; height: 14px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg> Saturday 17 October · 10:30am – 12:30pm<br><svg style="width: 14px; height: 14px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M11 17h2v-5h-2v5zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg> East Point Pavilion, Royal Plain, Lowestoft NR32 1QS</p>
-            <a href="https://www.zeffy.com/en-GB/ticketing/upcycling-workshop-seen-studio-shirts" class="btn-primary" target="_blank" rel="noopener">Book now</a>
-          </div>
-          <div style="text-align: center;">
-            <img src="images/shirt-upcycling-seen-studio.png" alt="Shirt upcycling workshop poster from SEEN Studios" style="max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-          </div>
-        </div>
-      </div>
-    </div>
+  
+      
       <div style="padding: 2rem; border: 2px dashed var(--blue-light); border-radius: 4px; background: var(--off-white); text-align: center;">
         <p style="font-size: 0.95rem; color: var(--blue-dark); font-weight: 500;"><svg style="width: 16px; height: 16px; display: inline-block; vertical-align: text-bottom; margin-right: 4px;" viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg> More events coming soon!</p>
         <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Follow us on Instagram @swapshopsuffolk for announcements about workshops, talks, and special events.</p>
@@ -536,9 +564,7 @@
     </div>
   </div>
 
-  <div style="text-align: center; margin-top: 3rem;">
-    <a href="index.html#contact" class="btn-primary">Get in Touch →</a>
-  </div>
+
 </section>
 
 <!-- ── FOOTER ── -->
@@ -586,6 +612,36 @@
         document.body.style.overflow = '';
       });
     });
+  }
+
+  // Gallery arrow controls
+  const photoGallery = document.getElementById('photoGallery');
+  if (photoGallery) {
+    const galleryArrows = document.querySelectorAll('.photo-gallery-arrow');
+    const updateGalleryArrows = function() {
+      const maxScroll = photoGallery.scrollWidth - photoGallery.clientWidth;
+      galleryArrows.forEach(function(arrow) {
+        const direction = Number(arrow.dataset.galleryStep);
+        arrow.disabled = direction < 0
+          ? photoGallery.scrollLeft <= 1
+          : photoGallery.scrollLeft >= maxScroll - 1;
+      });
+    };
+
+    galleryArrows.forEach(function(arrow) {
+      arrow.addEventListener('click', function() {
+        const direction = Number(arrow.dataset.galleryStep);
+        const galleryGap = parseFloat(getComputedStyle(photoGallery).gap) || 0;
+        photoGallery.scrollBy({
+          left: direction * (photoGallery.clientWidth + galleryGap),
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    photoGallery.addEventListener('scroll', updateGalleryArrows, { passive: true });
+    window.addEventListener('resize', updateGalleryArrows);
+    updateGalleryArrows();
   }
 
   // Auto-expire events after the event date
